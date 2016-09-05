@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  
+  
+    
+    <entry>
+      <title><![CDATA[替代Gradle的构建工具--Freeline]]></title>
+      <url>http://yoursite.com/2016/09/04/%E6%9B%BF%E4%BB%A3Gradle%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7-Freeline/</url>
+      <content type="html"><![CDATA[<p>废话不多说，先奉上 <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">Freeline Github主页</a><br><code>Freeline</code> 是阿里的一个团队开发的 <code>Android</code> 项目构建工具。使用 <code>Freeline</code> 的话，<br>在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。<br><a id="more"></a></p>
+<h2 id="实战体验"><a href="#实战体验" class="headerlink" title="实战体验"></a>实战体验</h2><p>这里对于 <code>Feeline</code> 的具体用法我就不说了，项目主页已经说的很详细了。<br>实际体验过后我发现，在开启了 <code>MultiDex</code> 的项目中，<code>Freeline</code> 的速度也是要比 <code>Gradle</code> 快一倍的。<br>拿我们公司的项目来说(具体什么项目就不表了)，我是没有固态硬盘，<code>win7</code>的环境，项目是开启了 <code>MultiDex</code>，module 有5+ 。<br>编译速度如下</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">/</th>
+<th style="text-align:left">Gradle</th>
+<th style="text-align:left">Freeline</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">全量编译(max)</td>
+<td style="text-align:left">4min+</td>
+<td style="text-align:left">100s+</td>
+</tr>
+<tr>
+<td style="text-align:left">全量编译(min)</td>
+<td style="text-align:left">3min+</td>
+<td style="text-align:left">70s+</td>
+</tr>
+<tr>
+<td style="text-align:left">增量编译/InstantRun</td>
+<td style="text-align:left">&gt; 10s</td>
+<td style="text-align:left">&lt; 5s</td>
+</tr>
+</tbody>
+</table>
+<p>关于 <code>Gradle</code> 的构建速度有点记不清了，反正是开了 <code>InstnatRun</code> 之后也没有感觉快很多.<br>而且 <code>Freeline</code> 与 <code>InstantRun</code> 相比，在 <code>Freeline</code> 下修改 <code>Java</code> 文件或者资源，都是可以增量并且都是在 5s 内的。<br><code>Gradle</code> 的话修改资源可以跑 <code>InstnatRun</code>，但是一旦修改了资源文件，又需要重新构建，也就是全量编译，又需要花费大量的时间。<br>所以这段时间体验下来，<code>Freeline</code> 确实帮我节省了很多时间，可以更加专注的开（tou）发（lan）。</p>
+<h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>下面贴一下我的 <code>Freeline</code> 在 <code>Gradle</code> 的配置，如果你也想用 <code>Freeline</code> 的话，这可能对你有帮助</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;</div><div class="line">apply plugin: &apos;com.antfortune.freeline&apos;</div><div class="line">android &#123;</div><div class="line">    freeline &#123;</div><div class="line">        hack true</div><div class="line">        productFlavor &apos;dev&apos;</div><div class="line">        apkPath project.rootProject.file(&quot;D:\\workspace\\my_project\\app\\build\\outputs\\apk&quot;).getAbsolutePath()+&apos;\\app-dev-debug-&apos;+parent.ext.versionName+&apos;.apk&apos;</div><div class="line">        #如果是Linux可以使用相对路径，win没试过相对路径</div><div class="line">        #apkPath project.rootProject.file(&quot;app/build/outputs/apk&quot;).getAbsolutePath()+&apos;/app-dev-debug-&apos;+parent.ext.versionName+&apos;.apk&apos;</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">    productFlavors &#123;</div><div class="line">        //instant run</div><div class="line">        dev&#123;</div><div class="line">            minSdkVersion  21</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ...</div><div class="line">        productFlavors.all &#123; flavor -&gt;</div><div class="line">            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]</div><div class="line">            flavor.minSdkVersion 14</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //apk添加版本号</div><div class="line">    android.applicationVariants.all &#123; variant -&gt;</div><div class="line">        def file = variant.outputs[0].outputFile</div><div class="line">        variant.outputs[0].outputFile = new File(file.parent, file.name.replace(&quot;.apk&quot;, &quot;-&quot; + defaultConfig.versionName + &quot;.apk&quot;))</div><div class="line">    &#125;</div><div class="line">    sourceSets &#123;</div><div class="line">        main &#123;</div><div class="line">            jniLibs.srcDirs = [&apos;libs&apos;]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">dependencies &#123;</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;</div><div class="line">    </div><div class="line">    ...</div><div class="line">    compile &apos;com.antfortune.freeline:runtime:0.5.4&apos;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><code>Freeline</code> 开源出来还不久，所以还不能完全的符合日常的开发需求。<br>如果你有任何的问题，可以到 <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">项目主页</a> 提 issue。</p>
+<p>最后的最后，能够当一名开发者，了解到这么有趣的东西，真的是太好了。</p>
+]]></content>
+    </entry>
+    
+    <entry>
+      <title><![CDATA[Hello World]]></title>
+      <url>http://yoursite.com/2016/09/01/hello-world/</url>
+      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
+]]></content>
+    </entry>
+    
+  
+  
+</search>
