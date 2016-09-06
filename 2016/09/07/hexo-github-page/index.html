@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Gradle,Freeline," />
+  <meta name="keywords" content="Hexo,Linux," />
 
 
 
@@ -84,16 +84,16 @@
 
 
 
-<meta name="description" content="废话不多说，先奉上 Freeline Github主页Freeline 是阿里的一个团队开发的 Android 项目构建工具。使用 Freeline 的话，在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。">
+<meta name="description" content="本文中使用的 Linux 发行版为 Ubuntu 16.04以下内容假设你是一个对 github 有所了解并且有使用过 git 的人如果你还是想继续阅读，请利用好你的搜索引擎做相应的准备">
 <meta property="og:type" content="article">
-<meta property="og:title" content="替代Gradle的构建工具--Freeline">
-<meta property="og:url" content="http://yoursite.com/2016/09/04/替代Gradle的构建工具-Freeline/index.html">
+<meta property="og:title" content="Linux 使用 Hexo + Github Pages 搭建静态博客">
+<meta property="og:url" content="http://yoursite.com/2016/09/07/hexo-github-page/index.html">
 <meta property="og:site_name" content="pcyan">
-<meta property="og:description" content="废话不多说，先奉上 Freeline Github主页Freeline 是阿里的一个团队开发的 Android 项目构建工具。使用 Freeline 的话，在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。">
-<meta property="og:updated_time" content="2016-09-05T15:56:53.697Z">
+<meta property="og:description" content="本文中使用的 Linux 发行版为 Ubuntu 16.04以下内容假设你是一个对 github 有所了解并且有使用过 git 的人如果你还是想继续阅读，请利用好你的搜索引擎做相应的准备">
+<meta property="og:updated_time" content="2016-09-06T16:20:39.752Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="替代Gradle的构建工具--Freeline">
-<meta name="twitter:description" content="废话不多说，先奉上 Freeline Github主页Freeline 是阿里的一个团队开发的 Android 项目构建工具。使用 Freeline 的话，在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。">
+<meta name="twitter:title" content="Linux 使用 Hexo + Github Pages 搭建静态博客">
+<meta name="twitter:description" content="本文中使用的 Linux 发行版为 Ubuntu 16.04以下内容假设你是一个对 github 有所了解并且有使用过 git 的人如果你还是想继续阅读，请利用好你的搜索引擎做相应的准备">
 
 
 
@@ -114,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2016/09/04/替代Gradle的构建工具-Freeline/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/09/07/hexo-github-page/"/>
 
-  <title> 替代Gradle的构建工具--Freeline | pcyan </title>
+  <title> Linux 使用 Hexo + Github Pages 搭建静态博客 | pcyan </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -284,7 +284,7 @@
             
             
               
-                替代Gradle的构建工具--Freeline
+                Linux 使用 Hexo + Github Pages 搭建静态博客
               
             
           </h1>
@@ -296,38 +296,19 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">发表于</span>
-            <time itemprop="dateCreated" datetime="2016-09-04T23:15:51+08:00" content="2016-09-04">
-              2016-09-04
+            <time itemprop="dateCreated" datetime="2016-09-07T00:17:00+08:00" content="2016-09-07">
+              2016-09-07
             </time>
           </span>
 
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">分类于</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Android开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
           
 
           
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/04/替代Gradle的构建工具-Freeline/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/04/替代Gradle的构建工具-Freeline/" itemprop="commentsCount"></span>
+                <a href="/2016/09/07/hexo-github-page/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/07/hexo-github-page/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,39 +331,44 @@
       
 
       
-        <p>废话不多说，先奉上 <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">Freeline Github主页</a><br><code>Freeline</code> 是阿里的一个团队开发的 <code>Android</code> 项目构建工具。使用 <code>Freeline</code> 的话，<br>在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。<br><a id="more"></a></p>
-<h2 id="实战体验"><a href="#实战体验" class="headerlink" title="实战体验"></a>实战体验</h2><p>这里对于 <code>Feeline</code> 的具体用法我就不说了，项目主页已经说的很详细了。<br>实际体验过后我发现，在开启了 <code>MultiDex</code> 的项目中，<code>Freeline</code> 的速度也是要比 <code>Gradle</code> 快一倍的。<br>拿我们公司的项目来说(具体什么项目就不表了)，我是没有固态硬盘，<code>win7</code>的环境，项目是开启了 <code>MultiDex</code>，module 有5+ 。<br>编译速度如下</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">/</th>
-<th style="text-align:left">Gradle</th>
-<th style="text-align:left">Freeline</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">全量编译(max)</td>
-<td style="text-align:left">4min+</td>
-<td style="text-align:left">100s+</td>
-</tr>
-<tr>
-<td style="text-align:left">全量编译(min)</td>
-<td style="text-align:left">3min+</td>
-<td style="text-align:left">70s+</td>
-</tr>
-<tr>
-<td style="text-align:left">增量编译/InstantRun</td>
-<td style="text-align:left">&gt; 10s</td>
-<td style="text-align:left">&lt; 5s</td>
-</tr>
-</tbody>
-</table>
-<p>关于 <code>Gradle</code> 的构建速度有点记不清了，反正是开了 <code>InstnatRun</code> 之后也没有感觉快很多.<br>而且 <code>Freeline</code> 与 <code>InstantRun</code> 相比，在 <code>Freeline</code> 下修改 <code>Java</code> 文件或者资源，都是可以增量并且都是在 5s 内的。<br><code>Gradle</code> 的话修改资源可以跑 <code>InstnatRun</code>，但是一旦修改了资源文件，又需要重新构建，也就是全量编译，又需要花费大量的时间。<br>所以这段时间体验下来，<code>Freeline</code> 确实帮我节省了很多时间，可以更加专注的开（tou）发（lan）。</p>
-<h2 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h2><p>下面贴一下我的 <code>Freeline</code> 在 <code>Gradle</code> 的配置，如果你也想用 <code>Freeline</code> 的话，这可能对你有帮助</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;</div><div class="line">apply plugin: &apos;com.antfortune.freeline&apos;</div><div class="line">android &#123;</div><div class="line">    freeline &#123;</div><div class="line">        hack true</div><div class="line">        productFlavor &apos;dev&apos;</div><div class="line">        apkPath project.rootProject.file(&quot;D:\\workspace\\my_project\\app\\build\\outputs\\apk&quot;).getAbsolutePath()+&apos;\\app-dev-debug-&apos;+parent.ext.versionName+&apos;.apk&apos;</div><div class="line">        #如果是Linux可以使用相对路径，win没试过相对路径</div><div class="line">        #apkPath project.rootProject.file(&quot;app/build/outputs/apk&quot;).getAbsolutePath()+&apos;/app-dev-debug-&apos;+parent.ext.versionName+&apos;.apk&apos;</div><div class="line">    &#125;</div><div class="line">    ...</div><div class="line">    productFlavors &#123;</div><div class="line">        //instant run</div><div class="line">        dev&#123;</div><div class="line">            minSdkVersion  21</div><div class="line">        &#125;</div><div class="line">        </div><div class="line">        ...</div><div class="line">        productFlavors.all &#123; flavor -&gt;</div><div class="line">            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]</div><div class="line">            flavor.minSdkVersion 14</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">    //apk添加版本号</div><div class="line">    android.applicationVariants.all &#123; variant -&gt;</div><div class="line">        def file = variant.outputs[0].outputFile</div><div class="line">        variant.outputs[0].outputFile = new File(file.parent, file.name.replace(&quot;.apk&quot;, &quot;-&quot; + defaultConfig.versionName + &quot;.apk&quot;))</div><div class="line">    &#125;</div><div class="line">    sourceSets &#123;</div><div class="line">        main &#123;</div><div class="line">            jniLibs.srcDirs = [&apos;libs&apos;]</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">dependencies &#123;</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;</div><div class="line">    </div><div class="line">    ...</div><div class="line">    compile &apos;com.antfortune.freeline:runtime:0.5.4&apos;</div><div class="line">    </div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p><code>Freeline</code> 开源出来还不久，所以还不能完全的符合日常的开发需求。<br>如果你有任何的问题，可以到 <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">项目主页</a> 提 issue。</p>
-<p>最后的最后，能够当一名开发者，了解到这么有趣的东西，真的是太好了。</p>
+        <p>本文中使用的 <code>Linux</code> 发行版为 <code>Ubuntu 16.04</code><br>以下内容假设你是一个对 <code>github</code> 有所了解并且有使用过 <code>git</code> 的人<br>如果你还是想继续阅读，请利用好你的<a href="http://google.com" target="_blank" rel="external">搜索引擎</a>做相应的准备<br><a id="more"></a></p>
+<h2 id="About-Github-Pages"><a href="#About-Github-Pages" class="headerlink" title="About Github Pages"></a>About Github Pages</h2><p><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> 是 <code>github</code> 的一种特殊的仓库，可以用来展示你的个人信息或者你的项目，不过当然，你可以用它做其他更好玩的事情。</p>
+<p>创建并使用 <code>Github Pages</code> 的方法很简单，你可以直接看<a href="https://pages.github.com/" target="_blank" rel="external">官方的教程</a>，或者看我的<del>废话</del>简短教程</p>
+<ol>
+<li>创建一个名为 <code>your_username.github.io</code> 的仓库（your_username表示你的Github用户名）</li>
+<li>部署静态页面例如 <code>index.html</code> 到刚才创建的仓库</li>
+<li>通过 <code>http://github.com/your_username/your_username.github.io/index.html</code> 来访问刚才创建的页面</li>
+</ol>
+<p>至此你已经可以成功的使用 <code>Github Pages</code> 玩耍了<br>更加高级的用法是你可以购买一个域名，然后将域名与 <code>Github Pages</code> 绑定在一起<br>这样就可以直接使用你自己的域名来访问了<br>这里没有讲的原因是我没钱买域名（捂脸），所以如果你感兴趣的话可以移步官方教程。</p>
+<h2 id="About-Hexo"><a href="#About-Hexo" class="headerlink" title="About Hexo"></a>About Hexo</h2><p>那么问题来了，我创建一个博客，总不能自己去维护页面的样式主题吧，这样一点都不软件工程啊。<br>所以接下来就是我们的正餐 – <code>Hexo</code></p>
+<p><a href="https://hexo.io/zh-cn/" target="_blank" rel="external">Hexo</a>是一个跨平台的，可供用户快速配置博客样式并且管理博客的工具<br>你可以使用别人分享的<a href="https://hexo.io/themes/" target="_blank" rel="external">主题</a>加上上文提及的 <code>Github Pages</code>  快速搭建你的个人静态博客。</p>
+<h2 id="How-to-use-Hexo"><a href="#How-to-use-Hexo" class="headerlink" title="How to use Hexo"></a>How to use Hexo</h2><p>下面讲一下如何在 <code>Linux</code> 配置并使用 <code>Hexo</code></p>
+<h3 id="安装-NodeJs"><a href="#安装-NodeJs" class="headerlink" title="安装 NodeJs"></a>安装 NodeJs</h3><p><a href="https://nodejs.org/en/download/package-manager/" target="_blank" rel="external">官方教程</a><br>稳定版v4.x<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sL https://deb.nodesource.com/setup_4.x | sudo -E bash -</div><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure></p>
+<p>最新版本v6.x<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -</div><div class="line">sudo apt-get install -y nodejs</div></pre></td></tr></table></figure></p>
+<p>可选：安装构建工具<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install -y build-essential</div></pre></td></tr></table></figure></p>
+<h3 id="安装-Hexo"><a href="#安装-Hexo" class="headerlink" title="安装 Hexo"></a>安装 Hexo</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">$ cd workspace/</div><div class="line">$ npm install hexo-cli -g</div><div class="line">$ hexo init //初始化环境</div><div class="line">$ cd Hexo</div><div class="line">$ npm install //安装依赖</div><div class="line">$ hexo clean</div><div class="line">$ hexo g //生成文件</div><div class="line">$ hexo s //启动预览</div></pre></td></tr></table></figure>
+<p>输入 <code>hexo s</code> 后会显示<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">INFO  Start processing</div><div class="line">INFO  Hexo is running at http://localhost:4000/. Press Ctrl+C to stop.</div></pre></td></tr></table></figure></p>
+<p>在浏览器输入 <code>http://localhost:4000/</code> 便可以预览博客了</p>
+<h3 id="主题配置"><a href="#主题配置" class="headerlink" title="主题配置"></a>主题配置</h3><p>初始化完 <code>Hexo</code> 使用的是默认的主题，如果不喜欢的话可以上<code>github</code> 或者 <code>Hexo</code> 搜一下自己喜欢的主题<br>这里提供我使用的主题，<a href="https://github.com/iissnan/hexo-theme-next" target="_blank" rel="external">NexT</a></p>
+<p>下载主题<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ cd workspace/Hexo</div><div class="line">$ git clone https://github.com/iissnan/hexo-theme-next themes/next</div></pre></td></tr></table></figure></p>
+<p>配置<code>NexT</code><br>修改 <code>workspace/Hexo/_config.yml</code> 的 <code>theme</code>字段<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">theme: next</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里注意，<code>Hexo</code> 的配置文件，冒号后面一定要有空格</p>
+</blockquote>
+<p>保存配置之后便可以使用 <code>hexo s</code> 来预览主题了<br>关于主题的详细配置，<a href="http://theme-next.iissnan.com/" target="_blank" rel="external">NexT官方网站</a>讲的比我详细，我就不吹了</p>
+<h2 id="将-Hexo-部署到-Github"><a href="#将-Hexo-部署到-Github" class="headerlink" title="将 Hexo 部署到 Github"></a>将 Hexo 部署到 Github</h2><h3 id="生成-SSH-密钥"><a href="#生成-SSH-密钥" class="headerlink" title="生成 SSH 密钥"></a>生成 SSH 密钥</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">$ ssh-keygen -t rsa -C &quot;your_email@example.com&quot;</div><div class="line"># Creates a new ssh key using the provided email</div><div class="line">Generating public/private rsa key pair.</div><div class="line">Enter file in which to save the key (/home/username/.ssh/id_rsa):</div><div class="line">Enter passphrase (empty for no passphrase): [Type a passphrase]</div><div class="line">Enter same passphrase again: [Type passphrase again]</div></pre></td></tr></table></figure>
+<p>如果不为密钥配置密码可以直接 <code>Enter</code> 过</p>
+<h3 id="Github添加公钥"><a href="#Github添加公钥" class="headerlink" title="Github添加公钥"></a>Github添加公钥</h3><p>复制 <code>~/.ssh/id_rsa.pub</code>的内容，进入你的 <code>Github</code><br>选择<code>Settings –&gt; Deploy keys –&gt; Add deploy key</code>，添加公钥</p>
+<p>测试配置是否成功<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ ssh -T git@github.com</div></pre></td></tr></table></figure></p>
+<p>如果出现以下内容即表示配置完成并且成功！<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">Hi username! You&apos;ve successfully authenticated, but GitHub does not</div><div class="line">provide shell access.</div></pre></td></tr></table></figure></p>
+<h3 id="安装-Git-扩展"><a href="#安装-Git-扩展" class="headerlink" title="安装 Git 扩展"></a>安装 Git 扩展</h3><p>这里注意<code>Hexo</code> 需要安装扩展才能使用 <code>Git</code> 部署<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ npm install hexo-deployer-git --save</div></pre></td></tr></table></figure></p>
+<h3 id="Git部署配置"><a href="#Git部署配置" class="headerlink" title="Git部署配置"></a>Git部署配置</h3><p>编辑 <code>workspace/Hexo/_config.yml</code>,修改 <code>deploy</code> 字段下的内容<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">deploy:</div><div class="line">  type: git</div><div class="line">  repo: git@github.com:username/username.github.io.git</div><div class="line">  branch: master</div></pre></td></tr></table></figure></p>
+<blockquote>
+<p>这里 <code>repo</code> 填的是你的 <code>Github Pages</code> 的地址，注意是 <code>SSH</code> 地址，不是 <code>HTTPS</code></p>
+</blockquote>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g -d //组合命令，生成文件后部署</div></pre></td></tr></table></figure>
+<p>部署完毕再次进入 <code>Github Pages</code> 就可以看到效果了<br>有时候部署完会有点延时，等几秒钟再刷新就可以看到效果了</p>
+<h2 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h2><p>Enjoy the new world !!</p>
 
       
     </div>
@@ -405,11 +391,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/Hexo/" rel="tag">#Hexo</a>
           
-            <a href="/tags/Gradle/" rel="tag">#Gradle</a>
-          
-            <a href="/tags/Freeline/" rel="tag">#Freeline</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
         </div>
       
@@ -418,17 +402,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/09/01/hello-world/" rel="next" title="Hello World">
-                <i class="fa fa-chevron-left"></i> Hello World
+              <a href="/2016/09/04/替代Gradle的构建工具-Freeline/" rel="next" title="替代Gradle的构建工具--Freeline">
+                <i class="fa fa-chevron-left"></i> 替代Gradle的构建工具--Freeline
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/07/hexo-github-page/" rel="prev" title="Linux 使用 Hexo + Github Pages 搭建静态博客">
-                Linux 使用 Hexo + Github Pages 搭建静态博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +543,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实战体验"><span class="nav-number">1.</span> <span class="nav-text">实战体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附件"><span class="nav-number">2.</span> <span class="nav-text">附件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Github-Pages"><span class="nav-number">1.</span> <span class="nav-text">About Github Pages</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#About-Hexo"><span class="nav-number">2.</span> <span class="nav-text">About Hexo</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-use-Hexo"><span class="nav-number">3.</span> <span class="nav-text">How to use Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-NodeJs"><span class="nav-number">3.1.</span> <span class="nav-text">安装 NodeJs</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Hexo"><span class="nav-number">3.2.</span> <span class="nav-text">安装 Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#主题配置"><span class="nav-number">3.3.</span> <span class="nav-text">主题配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#将-Hexo-部署到-Github"><span class="nav-number">4.</span> <span class="nav-text">将 Hexo 部署到 Github</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#生成-SSH-密钥"><span class="nav-number">4.1.</span> <span class="nav-text">生成 SSH 密钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Github添加公钥"><span class="nav-number">4.2.</span> <span class="nav-text">Github添加公钥</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装-Git-扩展"><span class="nav-number">4.3.</span> <span class="nav-text">安装 Git 扩展</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Git部署配置"><span class="nav-number">4.4.</span> <span class="nav-text">Git部署配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#部署"><span class="nav-number">4.5.</span> <span class="nav-text">部署</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Finally"><span class="nav-number">5.</span> <span class="nav-text">Finally</span></a></li></ol></div>
             
           </div>
         </section>
@@ -683,9 +663,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'pcyan';
-      var disqus_identifier = '2016/09/04/替代Gradle的构建工具-Freeline/';
-      var disqus_title = "替代Gradle的构建工具--Freeline";
-      var disqus_url = 'http://yoursite.com/2016/09/04/替代Gradle的构建工具-Freeline/';
+      var disqus_identifier = '2016/09/07/hexo-github-page/';
+      var disqus_title = "Linux 使用 Hexo + Github Pages 搭建静态博客";
+      var disqus_url = 'http://yoursite.com/2016/09/07/hexo-github-page/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
