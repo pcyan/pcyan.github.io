@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="Android,Kotlin," />
 
 
 
@@ -84,15 +84,16 @@
 
 
 
-<meta name="description" content="韶光易逝，劝君惜取少年时">
-<meta property="og:type" content="website">
-<meta property="og:title" content="err0r">
-<meta property="og:url" content="http://pcyan.github.io/index.html">
+<meta name="description" content="前言学了3个星期的kotlin，并用它做了一个小项目。中间遇到了一些小问题，所以就想着写点东西来记录一下，方便日后自己查阅，也可以与他人分享本篇讲的是kotlin中高阶函数的使用及技巧。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="kotlin笔记：高阶函数的使用">
+<meta property="og:url" content="http://pcyan.github.io/2016/12/18/kotlin-note-higher-order-function/index.html">
 <meta property="og:site_name" content="err0r">
-<meta property="og:description" content="韶光易逝，劝君惜取少年时">
+<meta property="og:description" content="前言学了3个星期的kotlin，并用它做了一个小项目。中间遇到了一些小问题，所以就想着写点东西来记录一下，方便日后自己查阅，也可以与他人分享本篇讲的是kotlin中高阶函数的使用及技巧。">
+<meta property="og:updated_time" content="2016-12-18T12:57:38.051Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="err0r">
-<meta name="twitter:description" content="韶光易逝，劝君惜取少年时">
+<meta name="twitter:title" content="kotlin笔记：高阶函数的使用">
+<meta name="twitter:description" content="前言学了3个星期的kotlin，并用它做了一个小项目。中间遇到了一些小问题，所以就想着写点东西来记录一下，方便日后自己查阅，也可以与他人分享本篇讲的是kotlin中高阶函数的使用及技巧。">
 
 
 
@@ -113,9 +114,9 @@
 
 
 
-  <link rel="canonical" href="http://pcyan.github.io/"/>
+  <link rel="canonical" href="http://pcyan.github.io/2016/12/18/kotlin-note-higher-order-function/"/>
 
-  <title> err0r </title>
+  <title> kotlin笔记：高阶函数的使用 | err0r </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -151,9 +152,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left 
-   page-home 
- ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -263,9 +262,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
 
   
   
@@ -285,10 +284,7 @@
             
             
               
-                
-                <a class="post-title-link" href="/2016/12/18/kotlin-note-higher-order-function/" itemprop="url">
-                  kotlin笔记：高阶函数的使用
-                </a>
+                kotlin笔记：高阶函数的使用
               
             
           </h1>
@@ -354,361 +350,86 @@
       
 
       
-        
-          <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>学了3个星期的kotlin，并用它做了一个<a href="https://github.com/pcyan/Gantlin">小项目</a>。<br>中间遇到了一些小问题，所以就想着写点东西来记录一下，方便日后自己查阅，也可以与他人分享<br>本篇讲的是kotlin中高阶函数的使用及技巧。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/12/18/kotlin-note-higher-order-function/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
+        <h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><p>学了3个星期的kotlin，并用它做了一个<a href="https://github.com/pcyan/Gantlin" target="_blank" rel="external">小项目</a>。<br>中间遇到了一些小问题，所以就想着写点东西来记录一下，方便日后自己查阅，也可以与他人分享<br>本篇讲的是kotlin中高阶函数的使用及技巧。<br><a id="more"></a></p>
+<h1 id="什么是高阶函数"><a href="#什么是高阶函数" class="headerlink" title="什么是高阶函数"></a>什么是高阶函数</h1><p>在kotlin中，变量不仅仅可以是基本类型和引用类型，还可以是一个函数，函数可以被当作参数传递，<br>或者作为返回值被返回，这样的函数称为高阶函数。</p>
+<h1 id="举个栗子"><a href="#举个栗子" class="headerlink" title="举个栗子"></a>举个栗子</h1><p>当我们使用 <code>Sqlite</code>做频繁的数据库操作的时候，有可能会用到事务，我们会需要去调用’beginTransaction()’，然后做数据库操作，成功之后调用’setTransactionSuccessful()’，最后还需要调用’endTransaction()’。<br>在kotlin中我们可以简化这个操作<br>定义函数接受开启事务后要做的操作，即一个函数<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">fun excuteTransaction(transactionFun:()-&gt;Unit)&#123;</div><div class="line">    val db = dbHelper.writableDatabase</div><div class="line">    try&#123;</div><div class="line">        db.beginTransaction()</div><div class="line">        transactionFun()</div><div class="line">        db.setTransactionSuccessful()</div><div class="line">    &#125;finally &#123;</div><div class="line">        db.endTransaction()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>然后可以这样使用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">excuteTransaction &#123;</div><div class="line">    db.execSQL(...)</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>是不是简单了很多</p>
+<blockquote>
+<p>注：在kotlin中，调用函数时，如果参数为函数并且是最后一个参数，可以将参数移到括号外面。移动到括号外面之后如果括号内没有参数，括号可以省略不写。所以最终写法如上。</p>
+</blockquote>
+<h1 id="使用扩展函数进一步简化"><a href="#使用扩展函数进一步简化" class="headerlink" title="使用扩展函数进一步简化"></a>使用扩展函数进一步简化</h1><p>扩展函数可以使得我们在不需要修改原来类的源代码的基础上，新增我们需要的api<br>以上面的代码为例，我们可以使它更加简单<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">fun SQLiteDatabase.executeTransaction(transactionFun:SQLiteDatabase.()-&gt;Unit)&#123;</div><div class="line">    try&#123;</div><div class="line">        beginTransaction()</div><div class="line">        transactionFun()</div><div class="line">        setTransactionSuccessful()</div><div class="line">    &#125;finally &#123;</div><div class="line">        endTransaction()</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>定义<code>executeTransaction()</code>为<code>SQLiteDatabase</code>的扩展函数并使得它接受一个<code>SQLiteDatabase</code>的扩展函数,<br>从而使得<code>executeTransaction()</code>以及参数中的函数<code>transactionFun()</code>可以使用<code>this</code>关键字调用<code>SQLiteDatabase</code>的api，进行数据库操作,使用方法如下<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">val db = dbHelper.writableDatabase</div><div class="line">db.executeTransaction &#123;</div><div class="line">    execSQL(...)</div><div class="line">    ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>是不是更加简洁明了了，奖励自己一朵小红花</p>
+<h1 id="放弃麻烦的回调"><a href="#放弃麻烦的回调" class="headerlink" title="放弃麻烦的回调"></a>放弃麻烦的回调</h1><p>在Java中如果我们在做完一个操作之后希望能够得到响应并做一些后续的操作，那么我们就会定义一个回调函数<br>一般我们是这样定义的<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">interface MyListener&#123;</div><div class="line">    void MyCallBack(String str)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在kotlin中你可以这样调用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">//方法一</div><div class="line">obj.setMyListener(object:MyListener()&#123;</div><div class="line">    fun MyCallBack(str:String)&#123;</div><div class="line">	...</div><div class="line">    &#125;</div><div class="line">&#125;)</div></pre></td></tr></table></figure></p>
+<p>就像一般java中的调用一样<br>然而，kotlin支持像java8中的<code>SAM转换</code>(SAM conversion)，意思是当你的接口中之后一个方法的时候<br>你可以这样调用它<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//方法二</div><div class="line">obj.setMyListener&#123;str-&gt;</div><div class="line">    println(str)</div><div class="line">        ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当你只有一个参数，你甚至可以不写这个参数，使用<code>it</code>关键字进行引用<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">//方法三</div><div class="line">obj.setMyListener&#123;</div><div class="line">    println(it)</div><div class="line">        ...</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>看到这里，你可能会觉得那不是挺好的吗，标题说的是什么鬼<br>我一开始也觉的挺好的，但是当我使用kotlin去定义回调接口而不是使用java的时候<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">interface MyListener&#123;</div><div class="line">    fun MyCallBack(str:String)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>上面的接口只能使用<strong>方法一</strong>调用，不能使用方法二，或者三，原因是在kotlin中<br><code>SAM转换</code>只支持Java的代码，为什么呢？在我思考了<code>11.6667</code>秒之后，恍然大<del>雾</del>悟<br>kotlin根本就不需要这么麻烦的定义接口回调,你需要的只是一个函数做相应的后续操作，<br>所以你可以直接这样写<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">class Test &#123;</div><div class="line"></div><div class="line">    private var myCallBack: ((str:String) -&gt; Unit)? = null</div><div class="line"></div><div class="line">    fun setMyListener(myCallBack: ((str:String) -&gt; Unit))&#123;</div><div class="line">        this.myCallBack = myCallBack</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这里直接定义一个函数作为变量，作用跟回调一样，调用方法如下</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">val test = Test()</div><div class="line">test.setMyListener &#123;</div><div class="line">    println(it)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><p>在使用kotlin的过程中，我有时候会用Java的思想去思考问题。所以有时候我们会需要去<code>review</code>代码，<br>不断的向自己提问题，“这块地方能不能做的更好?”，这样才能从中发现自己的不足并不断改善自己</p>
+<h1 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h1><p><a href="https://kotlinlang.org/docs/reference/lambdas.html" target="_blank" rel="external">Higher-Order Functions and Lambdas</a><br><a href="http://tanfujun.com/kotlin-web-site-cn/docs/reference/lambdas.html" target="_blank" rel="external">高阶函数和lambda表达式</a><br><a href="http://kotlindoc.com/index.html" target="_blank" rel="external">号外 号外 Kotlin 1.0 正式发布</a><br><a href="https://github.com/wangjiegulu/kotlin-for-android-developers-zh" target="_blank" rel="external">《Kotlin for android developers》中文版翻译</a></p>
+
       
     </div>
 
     <div>
       
+        
+
+      
     </div>
 
     <div>
+      
+        
+
       
     </div>
 
     <footer class="post-footer">
       
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/07/hexo-github-page/" itemprop="url">
-                  Linux 使用 Hexo + Github Pages 搭建静态博客
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-07T00:17:00+08:00" content="2016-09-07">
-              2016-09-07
-            </time>
-          </span>
-
+        <div class="post-tags">
           
-
+            <a href="/tags/Android/" rel="tag">#Android</a>
           
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/07/hexo-github-page/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/07/hexo-github-page/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
+            <a href="/tags/Kotlin/" rel="tag">#Kotlin</a>
           
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>本文中使用的 <code>Linux</code> 发行版为 <code>Ubuntu 16.04</code><br>以下内容假设你是一个对 <code>github</code> 有所了解并且有使用过 <code>git</code> 的人<br>如果你还是想继续阅读，请利用好你的<a href="http://google.com">搜索引擎</a>做相应的准备<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/07/hexo-github-page/#more" rel="contents">
-              Read more &raquo;
-            </a>
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/09/07/hexo-github-page/" rel="next" title="Linux 使用 Hexo + Github Pages 搭建静态博客">
+                <i class="fa fa-chevron-left"></i> Linux 使用 Hexo + Github Pages 搭建静态博客
+              </a>
+            
           </div>
-        
-      
-    </div>
 
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
+          <div class="post-nav-prev post-nav-item">
             
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/04/use_freeline_instead_of_gradle/" itemprop="url">
-                  替代Gradle的构建工具--Freeline
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-04T23:15:51+08:00" content="2016-09-04">
-              2016-09-04
-            </time>
-          </span>
-
-          
-            <span class="post-category" >
-              &nbsp; | &nbsp;
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              <span class="post-meta-item-text">In</span>
-              
-                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Android开发</span>
-                  </a>
-                </span>
-
-                
-                
-
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                &nbsp; | &nbsp;
-                <a href="/2016/09/04/use_freeline_instead_of_gradle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/04/use_freeline_instead_of_gradle/" itemprop="commentsCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-
-          
-          
-
-          
+          </div>
         </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          <p>废话不多说，先奉上 <a href="https://github.com/alibaba/freeline">Freeline Github主页</a><br><code>Freeline</code> 是阿里的一个团队开发的 <code>Android</code> 项目构建工具。使用 <code>Freeline</code> 的话，<br>在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/04/use_freeline_instead_of_gradle/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </article>
 
 
-    
+
+    <div class="post-spread">
       
-
-  
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-            
-            
-              
-                
-                <a class="post-title-link" href="/2016/09/01/hello-world/" itemprop="url">
-                  Hello World
-                </a>
-              
-            
-          </h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            <span class="post-meta-item-icon">
-              <i class="fa fa-calendar-o"></i>
-            </span>
-            <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-01T00:00:00+08:00" content="2016-09-01">
-              2016-09-01
-            </time>
-          </span>
-
-          
-
-          
-
-          
-
-          
-          
-
-          
-        </div>
-      </header>
-    
-
-
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          <p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.<br>
-          <div class="post-more-link text-center">
-            <a class="btn" href="/2016/09/01/hello-world/#more" rel="contents">
-              Read more &raquo;
-            </a>
-          </div>
-        
+        <!-- Go to www.addthis.com/dashboard to customize your tools -->
+<script type = "text/javascript" src = "//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-57c842e5821a2ac2" async = "async" ></script>
       
     </div>
-
-    <div>
-      
-    </div>
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-  </section>
-
-  
+  </div>
 
 
           </div>
@@ -716,6 +437,17 @@
 
 
           
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
 
         </div>
         
@@ -735,8 +467,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            Overview
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/uploads/pic6.png"
@@ -797,6 +538,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#前言"><span class="nav-number">1.</span> <span class="nav-text">前言</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#什么是高阶函数"><span class="nav-number">2.</span> <span class="nav-text">什么是高阶函数</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#举个栗子"><span class="nav-number">3.</span> <span class="nav-text">举个栗子</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#使用扩展函数进一步简化"><span class="nav-number">4.</span> <span class="nav-text">使用扩展函数进一步简化</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#放弃麻烦的回调"><span class="nav-number">5.</span> <span class="nav-text">放弃麻烦的回调</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#总结"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#参考资料"><span class="nav-number">7.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -893,6 +645,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -909,9 +665,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'pcyan';
-      var disqus_identifier = 'index.html';
-      var disqus_title = "";
-      var disqus_url = '';
+      var disqus_identifier = '2016/12/18/kotlin-note-higher-order-function/';
+      var disqus_title = "kotlin笔记：高阶函数的使用";
+      var disqus_url = 'http://pcyan.github.io/2016/12/18/kotlin-note-higher-order-function/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
@@ -922,6 +678,8 @@
       }
 
       run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
       
     </script>
   
