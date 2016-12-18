@@ -5,7 +5,7 @@
     
     <entry>
       <title><![CDATA[Linux 使用 Hexo + Github Pages 搭建静态博客]]></title>
-      <url>http://yoursite.com/2016/09/07/hexo-github-page/</url>
+      <url>http://pcyan.github.io/2016/09/07/hexo-github-page/</url>
       <content type="html"><![CDATA[<p>本文中使用的 <code>Linux</code> 发行版为 <code>Ubuntu 16.04</code><br>以下内容假设你是一个对 <code>github</code> 有所了解并且有使用过 <code>git</code> 的人<br>如果你还是想继续阅读，请利用好你的<a href="http://google.com" target="_blank" rel="external">搜索引擎</a>做相应的准备<br><a id="more"></a></p>
 <h2 id="About-Github-Pages"><a href="#About-Github-Pages" class="headerlink" title="About Github Pages"></a>About Github Pages</h2><p><a href="https://pages.github.com/" target="_blank" rel="external">Github Pages</a> 是 <code>github</code> 的一种特殊的仓库，可以用来展示你的个人信息或者你的项目，不过当然，你可以用它做其他更好玩的事情。</p>
 <p>创建并使用 <code>Github Pages</code> 的方法很简单，你可以直接看<a href="https://pages.github.com/" target="_blank" rel="external">官方的教程</a>，或者看我的<del>废话</del>简短教程</p>
@@ -49,7 +49,7 @@
     
     <entry>
       <title><![CDATA[替代Gradle的构建工具--Freeline]]></title>
-      <url>http://yoursite.com/2016/09/04/%E6%9B%BF%E4%BB%A3Gradle%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7-Freeline/</url>
+      <url>http://pcyan.github.io/2016/09/04/%E6%9B%BF%E4%BB%A3Gradle%E7%9A%84%E6%9E%84%E5%BB%BA%E5%B7%A5%E5%85%B7-Freeline/</url>
       <content type="html"><![CDATA[<p>废话不多说，先奉上 <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">Freeline Github主页</a><br><code>Freeline</code> 是阿里的一个团队开发的 <code>Android</code> 项目构建工具。使用 <code>Freeline</code> 的话，<br>在经过全量编译（第一次全新的编译）后，之后的每次编译都可以通过增量编译，只提交更改部分的内容，所以编译速度非常快。<br><a id="more"></a></p>
 <h2 id="实战体验"><a href="#实战体验" class="headerlink" title="实战体验"></a>实战体验</h2><p>这里对于 <code>Feeline</code> 的具体用法我就不说了，项目主页已经说的很详细了。<br>实际体验过后我发现，在开启了 <code>MultiDex</code> 的项目中，<code>Freeline</code> 的速度也是要比 <code>Gradle</code> 快一倍的。<br>拿我们公司的项目来说(具体什么项目就不表了)，我是没有固态硬盘，<code>win7</code>的环境，项目是开启了 <code>MultiDex</code>，module 有5+ 。<br>编译速度如下</p>
 <table>
@@ -88,7 +88,7 @@
     
     <entry>
       <title><![CDATA[Hello World]]></title>
-      <url>http://yoursite.com/2016/09/01/hello-world/</url>
+      <url>http://pcyan.github.io/2016/09/01/hello-world/</url>
       <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.<br><a id="more"></a></p>
 <h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
 <p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
