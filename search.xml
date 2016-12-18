@@ -43,7 +43,7 @@
 </blockquote>
 <h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div></pre></td><td class="code"><pre><div class="line">$ hexo clean</div><div class="line">$ hexo g -d //组合命令，生成文件后部署</div></pre></td></tr></table></figure>
 <p>部署完毕再次进入 <code>Github Pages</code> 就可以看到效果了<br>有时候部署完会有点延时，等几秒钟再刷新就可以看到效果了</p>
-<h2 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h2><p>Enjoy the new world !!</p>
+<h2 id="Finally"><a href="#Finally" class="headerlink" title="Finally"></a>Finally</h2><p>Enjoy it !!</p>
 ]]></content>
     </entry>
     
