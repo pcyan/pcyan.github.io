@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Android,Gradle,Freeline," />
+  <meta name="keywords" content="Linux,shell," />
 
 
 
@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="&amp;#x5E9F;&amp;#x8BDD;&amp;#x4E0D;&amp;#x591A;&amp;#x8BF4;&amp;#xFF0C;&amp;#x5148;&amp;#x5949;&amp;#x4E0A; Freeline Github&amp;#x4E3B;&amp;#x9875;Freeline &amp;#x662F;&amp;#x963F;&amp;#x91CC;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x56E2;&amp;#x961F;&amp;#x5F00;&amp;#x53D1;&amp;#x7684">
+<meta name="description" content="&amp;#x6CE8;&amp;#xFF1A;&amp;#x6211;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x73AF;&amp;#x5883;&amp;#x662F; Ubuntu16.04 + gnome-terminal
+
+zsh&amp;#x4E0E;bash&amp;#x4E00;&amp;#x6837;&amp;#x662F;shell&amp;#x73AF;&amp;#x5883;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;zsh&amp;#x6BD4;&amp;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="替代Gradle的构建工具--Freeline">
-<meta property="og:url" content="http://pcyan.github.io/2016/09/04/use_freeline_instead_of_gradle/index.html">
+<meta property="og:title" content="工具流：使用zsh+oh-my-zsh+tmux构建你的命令行环境">
+<meta property="og:url" content="http://pcyan.github.io/2017/01/06/tool-zsh-tmux/index.html">
 <meta property="og:site_name" content="err0r">
-<meta property="og:description" content="&amp;#x5E9F;&amp;#x8BDD;&amp;#x4E0D;&amp;#x591A;&amp;#x8BF4;&amp;#xFF0C;&amp;#x5148;&amp;#x5949;&amp;#x4E0A; Freeline Github&amp;#x4E3B;&amp;#x9875;Freeline &amp;#x662F;&amp;#x963F;&amp;#x91CC;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x56E2;&amp;#x961F;&amp;#x5F00;&amp;#x53D1;&amp;#x7684">
-<meta property="og:updated_time" content="2016-09-05T15:56:53.697Z">
+<meta property="og:description" content="&amp;#x6CE8;&amp;#xFF1A;&amp;#x6211;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x73AF;&amp;#x5883;&amp;#x662F; Ubuntu16.04 + gnome-terminal
+
+zsh&amp;#x4E0E;bash&amp;#x4E00;&amp;#x6837;&amp;#x662F;shell&amp;#x73AF;&amp;#x5883;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;zsh&amp;#x6BD4;&amp;">
+<meta property="og:updated_time" content="2017-01-06T14:36:56.287Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="替代Gradle的构建工具--Freeline">
-<meta name="twitter:description" content="&amp;#x5E9F;&amp;#x8BDD;&amp;#x4E0D;&amp;#x591A;&amp;#x8BF4;&amp;#xFF0C;&amp;#x5148;&amp;#x5949;&amp;#x4E0A; Freeline Github&amp;#x4E3B;&amp;#x9875;Freeline &amp;#x662F;&amp;#x963F;&amp;#x91CC;&amp;#x7684;&amp;#x4E00;&amp;#x4E2A;&amp;#x56E2;&amp;#x961F;&amp;#x5F00;&amp;#x53D1;&amp;#x7684">
+<meta name="twitter:title" content="工具流：使用zsh+oh-my-zsh+tmux构建你的命令行环境">
+<meta name="twitter:description" content="&amp;#x6CE8;&amp;#xFF1A;&amp;#x6211;&amp;#x4F7F;&amp;#x7528;&amp;#x7684;&amp;#x73AF;&amp;#x5883;&amp;#x662F; Ubuntu16.04 + gnome-terminal
+
+zsh&amp;#x4E0E;bash&amp;#x4E00;&amp;#x6837;&amp;#x662F;shell&amp;#x73AF;&amp;#x5883;&amp;#xFF0C;&amp;#x4F46;&amp;#x662F;zsh&amp;#x6BD4;&amp;">
 
 
 
@@ -114,9 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://pcyan.github.io/2016/09/04/use_freeline_instead_of_gradle/"/>
+  <link rel="canonical" href="http://pcyan.github.io/2017/01/06/tool-zsh-tmux/"/>
 
-  <title> 替代Gradle的构建工具--Freeline | err0r </title>
+  <title> 工具流：使用zsh+oh-my-zsh+tmux构建你的命令行环境 | err0r </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -284,7 +290,7 @@
             
             
               
-                替代Gradle的构建工具--Freeline
+                工具流：使用zsh+oh-my-zsh+tmux构建你的命令行环境
               
             
           </h1>
@@ -296,8 +302,8 @@
               <i class="fa fa-calendar-o"></i>
             </span>
             <span class="post-meta-item-text">Posted on</span>
-            <time itemprop="dateCreated" datetime="2016-09-04T23:15:51+08:00" content="2016-09-04">
-              2016-09-04
+            <time itemprop="dateCreated" datetime="2017-01-06T22:31:26+08:00" content="2017-01-06">
+              2017-01-06
             </time>
           </span>
 
@@ -310,8 +316,8 @@
               <span class="post-meta-item-text">In</span>
               
                 <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                  <a href="/categories/Android开发/" itemprop="url" rel="index">
-                    <span itemprop="name">Android开发</span>
+                  <a href="/categories/Linux没那么难/" itemprop="url" rel="index">
+                    <span itemprop="name">Linux没那么难</span>
                   </a>
                 </span>
 
@@ -326,8 +332,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/09/04/use_freeline_instead_of_gradle/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/09/04/use_freeline_instead_of_gradle/" itemprop="commentsCount"></span>
+                <a href="/2017/01/06/tool-zsh-tmux/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2017/01/06/tool-zsh-tmux/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -350,39 +356,45 @@
       
 
       
-        <p>&#x5E9F;&#x8BDD;&#x4E0D;&#x591A;&#x8BF4;&#xFF0C;&#x5148;&#x5949;&#x4E0A; <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">Freeline Github&#x4E3B;&#x9875;</a><br><code>Freeline</code> &#x662F;&#x963F;&#x91CC;&#x7684;&#x4E00;&#x4E2A;&#x56E2;&#x961F;&#x5F00;&#x53D1;&#x7684; <code>Android</code> &#x9879;&#x76EE;&#x6784;&#x5EFA;&#x5DE5;&#x5177;&#x3002;&#x4F7F;&#x7528; <code>Freeline</code> &#x7684;&#x8BDD;&#xFF0C;<br>&#x5728;&#x7ECF;&#x8FC7;&#x5168;&#x91CF;&#x7F16;&#x8BD1;&#xFF08;&#x7B2C;&#x4E00;&#x6B21;&#x5168;&#x65B0;&#x7684;&#x7F16;&#x8BD1;&#xFF09;&#x540E;&#xFF0C;&#x4E4B;&#x540E;&#x7684;&#x6BCF;&#x6B21;&#x7F16;&#x8BD1;&#x90FD;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x589E;&#x91CF;&#x7F16;&#x8BD1;&#xFF0C;&#x53EA;&#x63D0;&#x4EA4;&#x66F4;&#x6539;&#x90E8;&#x5206;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x6240;&#x4EE5;&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#x975E;&#x5E38;&#x5FEB;&#x3002;<br><a id="more"></a></p>
-<h2 id="&#x5B9E;&#x6218;&#x4F53;&#x9A8C;"><a href="#&#x5B9E;&#x6218;&#x4F53;&#x9A8C;" class="headerlink" title="&#x5B9E;&#x6218;&#x4F53;&#x9A8C;"></a>&#x5B9E;&#x6218;&#x4F53;&#x9A8C;</h2><p>&#x8FD9;&#x91CC;&#x5BF9;&#x4E8E; <code>Feeline</code> &#x7684;&#x5177;&#x4F53;&#x7528;&#x6CD5;&#x6211;&#x5C31;&#x4E0D;&#x8BF4;&#x4E86;&#xFF0C;&#x9879;&#x76EE;&#x4E3B;&#x9875;&#x5DF2;&#x7ECF;&#x8BF4;&#x7684;&#x5F88;&#x8BE6;&#x7EC6;&#x4E86;&#x3002;<br>&#x5B9E;&#x9645;&#x4F53;&#x9A8C;&#x8FC7;&#x540E;&#x6211;&#x53D1;&#x73B0;&#xFF0C;&#x5728;&#x5F00;&#x542F;&#x4E86; <code>MultiDex</code> &#x7684;&#x9879;&#x76EE;&#x4E2D;&#xFF0C;<code>Freeline</code> &#x7684;&#x901F;&#x5EA6;&#x4E5F;&#x662F;&#x8981;&#x6BD4; <code>Gradle</code> &#x5FEB;&#x4E00;&#x500D;&#x7684;&#x3002;<br>&#x62FF;&#x6211;&#x4EEC;&#x516C;&#x53F8;&#x7684;&#x9879;&#x76EE;&#x6765;&#x8BF4;(&#x5177;&#x4F53;&#x4EC0;&#x4E48;&#x9879;&#x76EE;&#x5C31;&#x4E0D;&#x8868;&#x4E86;)&#xFF0C;&#x6211;&#x662F;&#x6CA1;&#x6709;&#x56FA;&#x6001;&#x786C;&#x76D8;&#xFF0C;<code>win7</code>&#x7684;&#x73AF;&#x5883;&#xFF0C;&#x9879;&#x76EE;&#x662F;&#x5F00;&#x542F;&#x4E86; <code>MultiDex</code>&#xFF0C;module &#x6709;5+ &#x3002;<br>&#x7F16;&#x8BD1;&#x901F;&#x5EA6;&#x5982;&#x4E0B;</p>
-<table>
-<thead>
-<tr>
-<th style="text-align:left">/</th>
-<th style="text-align:left">Gradle</th>
-<th style="text-align:left">Freeline</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td style="text-align:left">&#x5168;&#x91CF;&#x7F16;&#x8BD1;(max)</td>
-<td style="text-align:left">4min+</td>
-<td style="text-align:left">100s+</td>
-</tr>
-<tr>
-<td style="text-align:left">&#x5168;&#x91CF;&#x7F16;&#x8BD1;(min)</td>
-<td style="text-align:left">3min+</td>
-<td style="text-align:left">70s+</td>
-</tr>
-<tr>
-<td style="text-align:left">&#x589E;&#x91CF;&#x7F16;&#x8BD1;/InstantRun</td>
-<td style="text-align:left">&gt; 10s</td>
-<td style="text-align:left">&lt; 5s</td>
-</tr>
-</tbody>
-</table>
-<p>&#x5173;&#x4E8E; <code>Gradle</code> &#x7684;&#x6784;&#x5EFA;&#x901F;&#x5EA6;&#x6709;&#x70B9;&#x8BB0;&#x4E0D;&#x6E05;&#x4E86;&#xFF0C;&#x53CD;&#x6B63;&#x662F;&#x5F00;&#x4E86; <code>InstnatRun</code> &#x4E4B;&#x540E;&#x4E5F;&#x6CA1;&#x6709;&#x611F;&#x89C9;&#x5FEB;&#x5F88;&#x591A;.<br>&#x800C;&#x4E14; <code>Freeline</code> &#x4E0E; <code>InstantRun</code> &#x76F8;&#x6BD4;&#xFF0C;&#x5728; <code>Freeline</code> &#x4E0B;&#x4FEE;&#x6539; <code>Java</code> &#x6587;&#x4EF6;&#x6216;&#x8005;&#x8D44;&#x6E90;&#xFF0C;&#x90FD;&#x662F;&#x53EF;&#x4EE5;&#x589E;&#x91CF;&#x5E76;&#x4E14;&#x90FD;&#x662F;&#x5728; 5s &#x5185;&#x7684;&#x3002;<br><code>Gradle</code> &#x7684;&#x8BDD;&#x4FEE;&#x6539;&#x8D44;&#x6E90;&#x53EF;&#x4EE5;&#x8DD1; <code>InstnatRun</code>&#xFF0C;&#x4F46;&#x662F;&#x4E00;&#x65E6;&#x4FEE;&#x6539;&#x4E86;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF0C;&#x53C8;&#x9700;&#x8981;&#x91CD;&#x65B0;&#x6784;&#x5EFA;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x5168;&#x91CF;&#x7F16;&#x8BD1;&#xFF0C;&#x53C8;&#x9700;&#x8981;&#x82B1;&#x8D39;&#x5927;&#x91CF;&#x7684;&#x65F6;&#x95F4;&#x3002;<br>&#x6240;&#x4EE5;&#x8FD9;&#x6BB5;&#x65F6;&#x95F4;&#x4F53;&#x9A8C;&#x4E0B;&#x6765;&#xFF0C;<code>Freeline</code> &#x786E;&#x5B9E;&#x5E2E;&#x6211;&#x8282;&#x7701;&#x4E86;&#x5F88;&#x591A;&#x65F6;&#x95F4;&#xFF0C;&#x53EF;&#x4EE5;&#x66F4;&#x52A0;&#x4E13;&#x6CE8;&#x7684;&#x5F00;&#xFF08;tou&#xFF09;&#x53D1;&#xFF08;lan&#xFF09;&#x3002;</p>
-<h2 id="&#x9644;&#x4EF6;"><a href="#&#x9644;&#x4EF6;" class="headerlink" title="&#x9644;&#x4EF6;"></a>&#x9644;&#x4EF6;</h2><p>&#x4E0B;&#x9762;&#x8D34;&#x4E00;&#x4E0B;&#x6211;&#x7684; <code>Freeline</code> &#x5728; <code>Gradle</code> &#x7684;&#x914D;&#x7F6E;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x4E5F;&#x60F3;&#x7528; <code>Freeline</code> &#x7684;&#x8BDD;&#xFF0C;&#x8FD9;&#x53EF;&#x80FD;&#x5BF9;&#x4F60;&#x6709;&#x5E2E;&#x52A9;</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div><div class="line">26</div><div class="line">27</div><div class="line">28</div><div class="line">29</div><div class="line">30</div><div class="line">31</div><div class="line">32</div><div class="line">33</div><div class="line">34</div><div class="line">35</div><div class="line">36</div><div class="line">37</div><div class="line">38</div><div class="line">39</div><div class="line">40</div><div class="line">41</div><div class="line">42</div></pre></td><td class="code"><pre><div class="line">apply plugin: &apos;com.android.application&apos;</div><div class="line">apply plugin: &apos;com.antfortune.freeline&apos;</div><div class="line">android {</div><div class="line">    freeline {</div><div class="line">        hack true</div><div class="line">        productFlavor &apos;dev&apos;</div><div class="line">        apkPath project.rootProject.file(&quot;D:\\workspace\\my_project\\app\\build\\outputs\\apk&quot;).getAbsolutePath()+&apos;\\app-dev-debug-&apos;+parent.ext.versionName+&apos;.apk&apos;</div><div class="line">        #&#x5982;&#x679C;&#x662F;Linux&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;&#xFF0C;win&#x6CA1;&#x8BD5;&#x8FC7;&#x76F8;&#x5BF9;&#x8DEF;&#x5F84;</div><div class="line">        #apkPath project.rootProject.file(&quot;app/build/outputs/apk&quot;).getAbsolutePath()+&apos;/app-dev-debug-&apos;+parent.ext.versionName+&apos;.apk&apos;</div><div class="line">    }</div><div class="line">    ...</div><div class="line">    productFlavors {</div><div class="line">        //instant run</div><div class="line">        dev{</div><div class="line">            minSdkVersion  21</div><div class="line">        }</div><div class="line">        </div><div class="line">        ...</div><div class="line">        productFlavors.all { flavor -&gt;</div><div class="line">            flavor.manifestPlaceholders = [UMENG_CHANNEL_VALUE: name]</div><div class="line">            flavor.minSdkVersion 14</div><div class="line">        }</div><div class="line">    }</div><div class="line">    //apk&#x6DFB;&#x52A0;&#x7248;&#x672C;&#x53F7;</div><div class="line">    android.applicationVariants.all { variant -&gt;</div><div class="line">        def file = variant.outputs[0].outputFile</div><div class="line">        variant.outputs[0].outputFile = new File(file.parent, file.name.replace(&quot;.apk&quot;, &quot;-&quot; + defaultConfig.versionName + &quot;.apk&quot;))</div><div class="line">    }</div><div class="line">    sourceSets {</div><div class="line">        main {</div><div class="line">            jniLibs.srcDirs = [&apos;libs&apos;]</div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div><div class="line">dependencies {</div><div class="line">    compile fileTree(include: [&apos;*.jar&apos;], dir: &apos;libs&apos;)</div><div class="line">    testCompile &apos;junit:junit:4.12&apos;</div><div class="line">    </div><div class="line">    ...</div><div class="line">    compile &apos;com.antfortune.freeline:runtime:0.5.4&apos;</div><div class="line">    </div><div class="line">}</div></pre></td></tr></table></figure>
-<h2 id="&#x6700;&#x540E;"><a href="#&#x6700;&#x540E;" class="headerlink" title="&#x6700;&#x540E;"></a>&#x6700;&#x540E;</h2><p><code>Freeline</code> &#x5F00;&#x6E90;&#x51FA;&#x6765;&#x8FD8;&#x4E0D;&#x4E45;&#xFF0C;&#x6240;&#x4EE5;&#x8FD8;&#x4E0D;&#x80FD;&#x5B8C;&#x5168;&#x7684;&#x7B26;&#x5408;&#x65E5;&#x5E38;&#x7684;&#x5F00;&#x53D1;&#x9700;&#x6C42;&#x3002;<br>&#x5982;&#x679C;&#x4F60;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x95EE;&#x9898;&#xFF0C;&#x53EF;&#x4EE5;&#x5230; <a href="https://github.com/alibaba/freeline" target="_blank" rel="external">&#x9879;&#x76EE;&#x4E3B;&#x9875;</a> &#x63D0; issue&#x3002;</p>
-<p>&#x6700;&#x540E;&#x7684;&#x6700;&#x540E;&#xFF0C;&#x80FD;&#x591F;&#x5F53;&#x4E00;&#x540D;&#x5F00;&#x53D1;&#x8005;&#xFF0C;&#x4E86;&#x89E3;&#x5230;&#x8FD9;&#x4E48;&#x6709;&#x8DA3;&#x7684;&#x4E1C;&#x897F;&#xFF0C;&#x771F;&#x7684;&#x662F;&#x592A;&#x597D;&#x4E86;&#x3002;</p>
+        <blockquote>
+<p>&#x6CE8;&#xFF1A;&#x6211;&#x4F7F;&#x7528;&#x7684;&#x73AF;&#x5883;&#x662F; Ubuntu16.04 + gnome-terminal</p>
+</blockquote>
+<p><code>zsh</code>&#x4E0E;<code>bash</code>&#x4E00;&#x6837;&#x662F;<code>shell</code>&#x73AF;&#x5883;&#xFF0C;&#x4F46;&#x662F;<code>zsh</code>&#x6BD4;&#x8D77;<code>bash</code>&#x62E5;&#x6709;&#x62FC;&#x5199;&#x7EA0;&#x6B63;&#x4EE5;&#x53CA;&#x66F4;&#x591A;&#x7684;&#x6269;&#x5C55;&#x529F;&#x80FD;&#xFF0C;<br>&#x642D;&#x914D;<code>oh-my-zsh</code>&#x53EF;&#x4EE5;&#x4F7F;&#x7EC8;&#x7AEF;&#x6548;&#x7387;&#x52A0;&#x500D;<br><a id="more"></a></p>
+<h2 id="&#x5B89;&#x88C5;zsh"><a href="#&#x5B89;&#x88C5;zsh" class="headerlink" title="&#x5B89;&#x88C5;zsh"></a>&#x5B89;&#x88C5;<code>zsh</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install zsh</div></pre></td></tr></table></figure>
+<h2 id="&#x5B89;&#x88C5;oh-my-zsh"><a href="#&#x5B89;&#x88C5;oh-my-zsh" class="headerlink" title="&#x5B89;&#x88C5;oh-my-zsh"></a>&#x5B89;&#x88C5;<code>oh-my-zsh</code></h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sh -c &quot;$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)&quot;</div></pre></td></tr></table></figure>
+<h2 id="&#x8BBE;&#x7F6E;Gnome-terminal&#x4F7F;&#x7528;zsh&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;shell"><a href="#&#x8BBE;&#x7F6E;Gnome-terminal&#x4F7F;&#x7528;zsh&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;shell" class="headerlink" title="&#x8BBE;&#x7F6E;Gnome-terminal&#x4F7F;&#x7528;zsh&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;shell"></a>&#x8BBE;&#x7F6E;Gnome-terminal&#x4F7F;&#x7528;zsh&#x4E3A;&#x9ED8;&#x8BA4;&#x7684;shell</h2><p>&#x6253;&#x5F00;<code>Gnome-terminal</code>&#xFF0C;Edit -&gt; Proile Prefrences -&gt; Command -&gt; Custom command: zsh</p>
+<h2 id="tmux"><a href="#tmux" class="headerlink" title="tmux"></a>tmux</h2><p><code>tmux</code> &#x662F;&#x4E00;&#x4E2A;&#x7EC8;&#x7AEF;&#x7684;&#x7A97;&#x53E3;&#x7BA1;&#x7406;&#x5668;&#xFF0C;&#x5141;&#x8BB8;&#x4F60;&#x5728;&#x4E00;&#x4E2A;Linux&#x7EC8;&#x7AEF;&#x7A97;&#x53E3;&#x5B9E;&#x4F8B;&#x5207;&#x5206;&#x4E3A;&#x591A;&#x4E2A;&#x7A97;&#x53E3;&#x9762;&#x677F;&#x5E76;&#x7BA1;&#x7406;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install tmux</div></pre></td></tr></table></figure></p>
+<p>&#x914D;&#x7F6E;&#x9ED8;&#x8BA4;&#x5F00;&#x542F;<code>tmux</code>&#x7684;&#x65B9;&#x5F0F;&#x4E0E;&#x4E0A;&#x9762;&#x914D;&#x7F6E;zsh&#x7684;&#x65B9;&#x6CD5;&#x4E00;&#x81F4;&#xFF0C;&#x5C06;&#x547D;&#x4EE4;&#x6539;&#x4E3A;<code>tmux</code>&#x5373;&#x53EF;</p>
+<h2 id="tmux-&#x5FEB;&#x6377;&#x952E;"><a href="#tmux-&#x5FEB;&#x6377;&#x952E;" class="headerlink" title="tmux &#x5FEB;&#x6377;&#x952E;"></a>tmux &#x5FEB;&#x6377;&#x952E;</h2><ul>
+<li>C-b ? &#x663E;&#x793A;&#x5FEB;&#x6377;&#x952E;&#x5E2E;&#x52A9;</li>
+<li>C-b &#x201C; &#x6A2A;&#x5411;&#x5206;&#x9694;&#x7A97;&#x53E3;</li>
+<li>C-b % &#x7EB5;&#x5411;&#x5206;&#x9694;&#x7A97;&#x53E3;</li>
+<li>C-b 0~9 &#x9009;&#x62E9;&#x51E0;&#x53F7;&#x7A97;&#x53E3;</li>
+<li>C-b o &#x8DF3;&#x5230;&#x4E0B;&#x4E00;&#x4E2A;&#x5206;&#x9694;&#x7A97;&#x53E3;</li>
+<li>C-b &#x4E0A;&#x4E0B;&#x952E; &#x4E0A;&#x4E00;&#x4E2A;&#x53CA;&#x4E0B;&#x4E00;&#x4E2A;&#x5206;&#x9694;&#x7A97;&#x53E3;</li>
+<li>C-b C-o &#x8C03;&#x6362;&#x7A97;&#x53E3;&#x4F4D;&#x7F6E;&#xFF0C;&#x7C7B;&#x4F3C;&#x4E0E;vim &#x91CC;&#x7684;C-w</li>
+<li>C-b &#x7A7A;&#x683C;&#x952E; &#x91C7;&#x7528;&#x4E0B;&#x4E00;&#x4E2A;&#x5185;&#x7F6E;&#x5E03;&#x5C40;</li>
+<li>C-b ! &#x628A;&#x5F53;&#x524D;&#x7A97;&#x53E3;&#x53D8;&#x4E3A;&#x65B0;&#x7A97;&#x53E3;</li>
+<li>C-b q &#x663E;&#x793A;&#x5206;&#x9694;&#x7A97;&#x53E3;&#x7684;&#x7F16;&#x53F7;</li>
+<li>C-b C-&#x65B9;&#x5411;&#x952E; &#x8C03;&#x6574;&#x5206;&#x9694;&#x7A97;&#x53E3;&#x5927;&#x5C0F;</li>
+<li>C-b c &#x521B;&#x5EFA;&#x65B0;&#x7A97;&#x53E3;</li>
+<li>C-b n &#x9009;&#x62E9;&#x4E0B;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;</li>
+<li>C-b p &#x9009;&#x62E9;&#x524D;&#x4E00;&#x4E2A;&#x7A97;&#x53E3;</li>
+<li>C-b l &#x5207;&#x6362;&#x5230;&#x6700;&#x540E;&#x4F7F;&#x7528;&#x7684;&#x7A97;&#x53E3;</li>
+<li>C-b ; &#x5207;&#x6362;&#x5230;&#x6700;&#x540E;&#x4E00;&#x4E2A;&#x4F7F;&#x7528;&#x7684;&#x9762;&#x677F;</li>
+<li>C-b x &#x5173;&#x95ED;&#x9762;&#x677F;</li>
+<li>C-b &amp; &#x5173;&#x95ED;&#x7A97;&#x53E3;</li>
+<li>C-b d &#x9000;&#x51FA;tumx&#xFF0C;&#x5E76;&#x4FDD;&#x5B58;&#x5F53;&#x524D;&#x4F1A;&#x8BDD;&#xFF0C;&#x8FD9;&#x65F6;&#xFF0C;tmux&#x4ECD;&#x5728;&#x540E;&#x53F0;&#x8FD0;&#x884C;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;tmux attach&#x8FDB;&#x5165;&#x5230;&#x6307;&#x5B9A;&#x7684;&#x4F1A;&#x8BDD;</li>
+</ul>
+<h2 id="&#x756A;&#x5916;&#xFF1A;&#x4F7F;&#x7528;powerline-status"><a href="#&#x756A;&#x5916;&#xFF1A;&#x4F7F;&#x7528;powerline-status" class="headerlink" title="&#x756A;&#x5916;&#xFF1A;&#x4F7F;&#x7528;powerline-status"></a>&#x756A;&#x5916;&#xFF1A;&#x4F7F;&#x7528;powerline-status</h2><p><code>powerline-status</code> &#x662F;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x7EC8;&#x7AEF;&#x4E0A;&#x663E;&#x793A;&#x4E00;&#x6761;&#x5BFC;&#x822A;&#x680F;<br>&#x5BF9;&#x4E8E;vim&#xFF0C;&#x5BFC;&#x822A;&#x680F;&#x4E0A;&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x6587;&#x4EF6;&#x7684;&#x4FE1;&#x606F;&#x548C;&#x7F16;&#x8F91;&#x5668;&#x6240;&#x5904;&#x7684;&#x6A21;&#x5F0F;&#x7B49;<br>&#x5BF9;&#x4E8E;tmux&#x53EF;&#x4EE5;&#x663E;&#x793A;&#x5F53;&#x524D;&#x662F;&#x5426;&#x5904;&#x4E8E;&#x7F16;&#x8F91;&#x6A21;&#x5F0F;&#xFF0C;&#x65F6;&#x95F4;&#x7B49;&#xFF08;&#x6211;&#x5BF9;tmux&#x8FD8;&#x4E0D;&#x662F;&#x5F88;&#x719F;&#x6089;&#xFF09;</p>
+<h3 id="powerline-status-&#x9700;&#x8981;&#x901A;&#x8FC7;-pip-&#x547D;&#x4EE4;&#x5B89;&#x88C5;&#xFF0C;&#x5148;&#x5B89;&#x88C5;-python-pip"><a href="#powerline-status-&#x9700;&#x8981;&#x901A;&#x8FC7;-pip-&#x547D;&#x4EE4;&#x5B89;&#x88C5;&#xFF0C;&#x5148;&#x5B89;&#x88C5;-python-pip" class="headerlink" title="powerline-status &#x9700;&#x8981;&#x901A;&#x8FC7; pip &#x547D;&#x4EE4;&#x5B89;&#x88C5;&#xFF0C;&#x5148;&#x5B89;&#x88C5; python-pip"></a>powerline-status &#x9700;&#x8981;&#x901A;&#x8FC7; pip &#x547D;&#x4EE4;&#x5B89;&#x88C5;&#xFF0C;&#x5148;&#x5B89;&#x88C5; python-pip</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">sudo apt-get install python-pip</div></pre></td></tr></table></figure>
+<h3 id="&#x5B89;&#x88C5;powerline-status"><a href="#&#x5B89;&#x88C5;powerline-status" class="headerlink" title="&#x5B89;&#x88C5;powerline-status"></a>&#x5B89;&#x88C5;powerline-status</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">su -c &apos;pip install git+git://github.com/Lokaltog/powerline&apos;</div></pre></td></tr></table></figure>
+<h3 id="powerline&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x7B26;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4ED6;&#x7684;&#x5B57;&#x4F53;"><a href="#powerline&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x7B26;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4ED6;&#x7684;&#x5B57;&#x4F53;" class="headerlink" title="powerline&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x7B26;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4ED6;&#x7684;&#x5B57;&#x4F53;"></a>powerline&#x4E2D;&#x81EA;&#x5B9A;&#x4E49;&#x4E86;&#x4E00;&#x4E9B;&#x7B26;&#x53F7;&#xFF0C;&#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4ED6;&#x7684;&#x5B57;&#x4F53;</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">wget https://github.com/Lokaltog/powerline/raw/develop/font/PowerlineSymbols.otf https://github.com/Lokaltog/powerline/raw/develop/font/10-powerline-symbols.conf</div><div class="line">sudo mv PowerlineSymbols.otf /usr/share/fonts/</div><div class="line">sudo fc-cache -vf</div><div class="line">sudo mv 10-powerline-symbols.conf /etc/fonts/conf.d/</div></pre></td></tr></table></figure>
+<h3 id="vim-&#x914D;&#x7F6E;"><a href="#vim-&#x914D;&#x7F6E;" class="headerlink" title="vim &#x914D;&#x7F6E;"></a>vim &#x914D;&#x7F6E;</h3><p>&#x5728;<code>/etc/vim/vimrc</code>&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">set rtp+=/usr/local/lib/python2.7/dist-packages/powerline/bindings/vim/</div><div class="line"></div><div class="line">&quot; Always show statusline</div><div class="line">set laststatus=2</div><div class="line"></div><div class="line">&quot; Use 256 colours (Use this setting only if your terminal supports 256 colours)</div><div class="line">set t_Co=256</div></pre></td></tr></table></figure></p>
+<h3 id="&#x914D;&#x7F6E;zsh"><a href="#&#x914D;&#x7F6E;zsh" class="headerlink" title="&#x914D;&#x7F6E;zsh"></a>&#x914D;&#x7F6E;zsh</h3><p>&#x5728;<code>/etc/zsh/zshrc</code>&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">if [[ -r /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh ]]; then</div><div class="line">    source /usr/local/lib/python2.7/dist-packages/powerline/bindings/zsh/powerline.zsh</div><div class="line">fi</div><div class="line">export TERM=xterm-256color</div></pre></td></tr></table></figure></p>
+<h3 id="&#x914D;&#x7F6E;tmux"><a href="#&#x914D;&#x7F6E;tmux" class="headerlink" title="&#x914D;&#x7F6E;tmux"></a>&#x914D;&#x7F6E;tmux</h3><p>&#x5728;<code>~/.tmux.conf</code>&#x4E2D;&#x6DFB;&#x52A0;&#x5982;&#x4E0B;&#x914D;&#x7F6E;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">source /usr/local/lib/python2.7/dist-packages/powerline/bindings/tmux/powerline.conf</div><div class="line">set-option -g default-terminal &quot;screen-256color&quot;</div><div class="line">set-option -g default-shell /bin/zsh</div></pre></td></tr></table></figure></p>
+<h2 id="&#x756A;&#x5916;&#x7684;&#x756A;&#x5916;"><a href="#&#x756A;&#x5916;&#x7684;&#x756A;&#x5916;" class="headerlink" title="&#x756A;&#x5916;&#x7684;&#x756A;&#x5916;"></a>&#x756A;&#x5916;&#x7684;&#x756A;&#x5916;</h2><p>&#x5199;&#x4E86;&#x4E00;&#x4E2A;<a href="https://gist.github.com/pcyan/acf05b05e210df3f56c63044fb8e0e52" target="_blank" rel="external">&#x81EA;&#x52A8;&#x5316;&#x811A;&#x672C;</a>&#xFF0C;&#x8FD8;&#x6CA1;&#x6D4B;&#x8BD5;&#x8FC7;&#xFF0C;&#x61D2;&#x4EBA;&#x4F46;&#x662F;<strong>&#x61C2;linux&#x811A;&#x672C;</strong>&#x53EF;&#x4EE5;&#x8BD5;&#x4E00;&#x4E0B;</p>
+<h2 id="&#x53C2;&#x8003;"><a href="#&#x53C2;&#x8003;" class="headerlink" title="&#x53C2;&#x8003;"></a>&#x53C2;&#x8003;</h2><p><a href="http://askubuntu.com/a/283909" target="_blank" rel="external">how-can-i-install-and-use-powerline-plugin</a><br><a href="https://github.com/robbyrussell/oh-my-zsh" target="_blank" rel="external">Github * oh-my-zsh</a></p>
 
       
     </div>
@@ -405,11 +417,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Android/" rel="tag">#Android</a>
+            <a href="/tags/Linux/" rel="tag">#Linux</a>
           
-            <a href="/tags/Gradle/" rel="tag">#Gradle</a>
-          
-            <a href="/tags/Freeline/" rel="tag">#Freeline</a>
+            <a href="/tags/shell/" rel="tag">#shell</a>
           
         </div>
       
@@ -418,17 +428,13 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2016/06/29/android-use-svg/" rel="next" title="Android 中使用 SVG 的一个坑">
-                <i class="fa fa-chevron-left"></i> Android 中使用 SVG 的一个坑
+              <a href="/2016/12/18/kotlin-note-higher-order-function/" rel="next" title="kotlin笔记：高阶函数的使用">
+                <i class="fa fa-chevron-left"></i> kotlin笔记：高阶函数的使用
               </a>
             
           </div>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2016/09/07/hexo-github-page/" rel="prev" title="Linux 使用 Hexo + Github Pages 搭建静态博客">
-                Linux 使用 Hexo + Github Pages 搭建静态博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -563,7 +569,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#实战体验"><span class="nav-number">1.</span> <span class="nav-text">实战体验</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#附件"><span class="nav-number">2.</span> <span class="nav-text">附件</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#最后"><span class="nav-number">3.</span> <span class="nav-text">最后</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#安装zsh"><span class="nav-number">1.</span> <span class="nav-text">安装zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#安装oh-my-zsh"><span class="nav-number">2.</span> <span class="nav-text">安装oh-my-zsh</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#设置Gnome-terminal使用zsh为默认的shell"><span class="nav-number">3.</span> <span class="nav-text">设置Gnome-terminal使用zsh为默认的shell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux"><span class="nav-number">4.</span> <span class="nav-text">tmux</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tmux-快捷键"><span class="nav-number">5.</span> <span class="nav-text">tmux 快捷键</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#番外：使用powerline-status"><span class="nav-number">6.</span> <span class="nav-text">番外：使用powerline-status</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#powerline-status-需要通过-pip-命令安装，先安装-python-pip"><span class="nav-number">6.1.</span> <span class="nav-text">powerline-status 需要通过 pip 命令安装，先安装 python-pip</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#安装powerline-status"><span class="nav-number">6.2.</span> <span class="nav-text">安装powerline-status</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#powerline中自定义了一些符号，所以需要安装他的字体"><span class="nav-number">6.3.</span> <span class="nav-text">powerline中自定义了一些符号，所以需要安装他的字体</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#vim-配置"><span class="nav-number">6.4.</span> <span class="nav-text">vim 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置zsh"><span class="nav-number">6.5.</span> <span class="nav-text">配置zsh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#配置tmux"><span class="nav-number">6.6.</span> <span class="nav-text">配置tmux</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#番外的番外"><span class="nav-number">7.</span> <span class="nav-text">番外的番外</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考"><span class="nav-number">8.</span> <span class="nav-text">参考</span></a></li></ol></div>
             
           </div>
         </section>
@@ -683,9 +689,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'pcyan';
-      var disqus_identifier = '2016/09/04/use_freeline_instead_of_gradle/';
-      var disqus_title = "替代Gradle的构建工具--Freeline";
-      var disqus_url = 'http://pcyan.github.io/2016/09/04/use_freeline_instead_of_gradle/';
+      var disqus_identifier = '2017/01/06/tool-zsh-tmux/';
+      var disqus_title = "工具流：使用zsh+oh-my-zsh+tmux构建你的命令行环境";
+      var disqus_url = 'http://pcyan.github.io/2017/01/06/tool-zsh-tmux/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
