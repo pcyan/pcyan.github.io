@@ -2,88 +2,105 @@
 <html lang="zh-ch">
   <head>
     <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Hugo 0.55.6" />
-
-
-<title>About - err0r&#39;s blog</title>
-<meta property="og:title" content="About - err0r&#39;s blog">
-
-
-  <link href='https://example.org/favicon.ico' rel='icon' type='image/x-icon'/>
-
-
-
-  
-
-
-
-
-
-
-<link rel="icon" href="https://example.orgimages/favicon.ico" type="image/x-icon"/>
-<link rel="stylesheet" href="https://example.orgcss/main.css" media="all">
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Merriweather:400|Lato:400,400italic,700">
-
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+    <title>About - err0r&#39;s blog</title>
+    
+    <meta name="description" content="默默无闻的Java工程师">
+    <meta name="author" content="err0r">
+    
+    <link href="http://blog.yaaan.top/css/github-gist.min.css" rel="stylesheet">
+    <link href="http://blog.yaaan.top/css/style.css" rel="stylesheet">
+    
+    <link rel="apple-touch-icon" href="http://blog.yaaan.top/img/apple-touch-icon.png">
+    <link rel="icon" href="http://blog.yaaan.top/img/favicon.ico">
+    
+    <meta name="generator" content="Hugo 0.55.6" />
+    
+    <link rel="alternate" type="application/atom+xml" href="http://blog.yaaan.top/index.xml" title="err0r&#39;s blog">
+    
+    
+    
   </head>
-  <body>
-    <div class="wrapper">
-      <header class="header">
-        <nav class="nav">
-  <a href="https://example.org" class="nav-logo">
-    <img src="https://example.orgimages/logo.png" 
-         width="50" 
-         height="50" 
-         alt="Logo">
-  </a>
-
-  <ul class="nav-links">
+  <body class="single">
+    <header class="header">
+      <div class="wrap">
+        
+        <p class="logo"><a href="http://blog.yaaan.top">err0r&#39;s blog</a></p>
+        
+        
+        <button class="menu-toggle" type="button"></button>
+        
+      </div>
+    </header>
     
-    <li><a href="/about/">About</a></li>
+    <nav class="nav">
+      <ul class="menu">
+        
+        <li>
+          <a href="/about/">About</a>
+        </li>
+        
+      </ul>
+    </nav>
     
-  </ul>
-</nav>
-
-      </header>
+    <main class="main">
 
 
-<main class="content" role="main">
-
-  <article class="article">
-    
-
-    <h1 class="article-title">About</h1>
-
-    
-
-    <div class="article-content">
-      <p>默默无闻的Java工程师</p>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">About</h1>
+    <div class="post-meta">err0r · 2019.6.30</div>
+  </header>
+  <div class="post-content"><p>默默无闻的Java工程师</p>
 
 <blockquote>
 <p>熟悉<code>Docker</code>, 会写点<code>Shell</code>脚本<br/>
 最近在学拍照</p>
-</blockquote>
-    </div>
-  </article>
-
+</blockquote></div>
+  <footer class="post-footer">
+    
+  </footer>
   
+  
+  
+  
+</article>
 
 </main>
+<footer class="footer">
+  <span>&copy; 2019 <a href="http://blog.yaaan.top">err0r&#39;s blog</a></span>
+  <span>&middot;</span>
+  <span>Powered by <a href="https://gohugo.io/" rel="noopener" target="_blank">Hugo️️</a>️</span>
+  <span>&middot;</span>
+  <span>Theme️ <a href="https://github.com/nanxiaobei/hugo-paper" rel="noopener" target="_blank">Paper</a></span>
+</footer>
+<script src="http://blog.yaaan.top/js/instantclick.min.js" data-no-instant></script>
+<script data-no-instant>InstantClick.init();</script>
+<script src="http://blog.yaaan.top/js/highlight.min.js" data-no-instant></script>
+<script data-no-instant>
+  let body;
+  function menuToggleListener() {
+    body.classList.toggle('blur');
+  }
+  function setMenuToggleListener() {
+    const menuToggle = document.querySelector('.menu-toggle');
+    if (!menuToggle) return;
+    body = document.querySelector('body');
+    menuToggle.addEventListener('click', menuToggleListener);
+  }
 
-      <footer class="footer">
-        <ul class="footer-links">
-          <li>
-            <a href="https://example.org/index.xml" type="application/rss+xml" target="_blank">RSS feed</a>
-          </li>
-          <li>
-            <a href="https://gohugo.io/" class="footer-links-kudos">Made with <img src="https://example.orgimages/hugo-logo.png" width="22" height="22"></a>
-          </li>
-        </ul>
-      </footer>
+  hljs.initHighlightingOnLoad();
+  setMenuToggleListener();
 
-    </div>
-
-    
-  </body>
+  InstantClick.on('change', function () {
+    document.querySelectorAll('pre code').forEach((block) => {
+      hljs.highlightBlock(block);
+    });
+    setMenuToggleListener();
+  });
+</script>
+</body>
 </html>
 
