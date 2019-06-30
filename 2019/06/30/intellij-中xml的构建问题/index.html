@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     
-    <title>err0r&#39;s blog</title>
+    <title>Intellij 中xml的构建问题 - err0r&#39;s blog</title>
     
     <meta name="description" content="">
     <meta name="author" content="">
@@ -23,11 +23,11 @@
     
     
   </head>
-  <body class="list home">
+  <body class="single">
     <header class="header">
       <div class="wrap">
         
-        <h1 class="logo"><a href="http://blog.yaaan.top">err0r&#39;s blog</a></h1>
+        <p class="logo"><a href="http://blog.yaaan.top">err0r&#39;s blog</a></p>
         
         
         <button class="menu-toggle" type="button"></button>
@@ -48,42 +48,41 @@
     <main class="main">
 
 
-
-
-
-
-
-
-<article class="first-entry">
-  <header class="entry-header">
-    <h2>About</h2>
+<article class="post-single">
+  <header class="post-header">
+    <h1 class="post-title">Intellij 中xml的构建问题</h1>
+    <div class="post-meta">2019.6.30</div>
   </header>
-  <section class="entry-content">
-   <p>默默无闻的Java工程师
-...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>2019.6.30</time>
+  <div class="post-content"><p>Maven配置的Java web项目，默认会将编译好的文件放到项目的target文件夹下面，但是使用Intellij编译项目后，<code>src/main/java</code>文件夹下的<code>*.xml</code>是不会编译到<code>target</code>文件夹中的，所以如果Mybatis的<code>*Mapper.xml</code>和<code>*Mapper.java</code>放在一起的话，会在编译后找不到。
+用Eclipse编译项目的话，就不会发生这种情况。
+解决这中问题可以有两种方法。</p>
+
+<p>第一种是将所以<code>xml</code>文件都放在<code>resources</code>文件夹下，编译后所有<code>xml</code>文件都可以在<code>target</code>文件夹下原封不动的找到。
+这种方法比较适用于新的项目，但是与<code>Java</code>文件分离了，不适合源代码的管理。同时旧的项目也不方便把所有的<code>*.xml</code>文件都进行移动。</p>
+
+<p>第二种方法就是在<code>pom.xml</code>中进行配置，使Intellij在编译时会包含<code>xml</code>文件</p>
+
+<pre><code class="language-xml">&lt;build&gt;
+        &lt;resources&gt;
+            &lt;resource&gt;
+                &lt;!-- This include everything else under src/main/java directory --&gt;
+                &lt;directory&gt;${basedir}/src/main/java&lt;/directory&gt;
+                &lt;excludes&gt;
+                    &lt;exclude&gt;**/*.java&lt;/exclude&gt;
+                &lt;/excludes&gt;
+            &lt;/resource&gt;
+        &lt;/resources&gt;
+...
+&lt;/build&gt;
+</code></pre></div>
+  <footer class="post-footer">
+    
   </footer>
-  <a class="entry-link" href="http://blog.yaaan.top/about/"></a>
+  
+  
+  
+  
 </article>
-
-<article class="post-entry">
-  <header class="entry-header">
-    <h2>Intellij 中xml的构建问题</h2>
-  </header>
-  <section class="entry-content">
-   <p>...</p>
-  </section>
-  <footer class="entry-footer">
-    <time>2019.6.30</time>
-  </footer>
-  <a class="entry-link" href="http://blog.yaaan.top/2019/06/30/intellij-%E4%B8%ADxml%E7%9A%84%E6%9E%84%E5%BB%BA%E9%97%AE%E9%A2%98/"></a>
-</article>
-
-
-
-
 
 </main>
 <footer class="footer">
