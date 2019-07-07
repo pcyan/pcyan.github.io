@@ -6,10 +6,32 @@
     <description>Recent content in Posts on err0r&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Sun, 30 Jun 2019 11:22:32 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 07 Jul 2019 14:45:26 +0800</lastBuildDate>
     
 	<atom:link href="https://pcyan.github.io/post/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>最近的想法</title>
+      <link>https://pcyan.github.io/2019/07/07/%E6%9C%80%E8%BF%91%E7%9A%84%E6%83%B3%E6%B3%95/</link>
+      <pubDate>Sun, 07 Jul 2019 14:45:26 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/2019/07/07/%E6%9C%80%E8%BF%91%E7%9A%84%E6%83%B3%E6%B3%95/</guid>
+      <description> 走出失恋的阴影,释放工作压力,努力,让自己成为更好的人
+最近做的,以及将要做的一些事情,用博客记录一下,包括
+工作  搭建drone,并使用drone 做 CD service 滚动更新 service 更新失败自动回滚 日志集成到ELK,规范化管理日志 集成valut,管理线上,测试等环境的各个密钥  个人 重点: 提高身体素质
+ 一三五俯卧撑100个 二四六跑步,从2公里开始,慢慢让自己可以跑5公里 提高睡眠质量,22点准备入睡,早上6点30准备起床 把书看完,看完书看点面试题,看看自己缺什么,什么做的不好   调整好心情,给自己安排事情做,避免胡思乱想,陷入抑郁
+ </description>
+    </item>
+    
+    <item>
+      <title>最近拍的一些照片</title>
+      <link>https://pcyan.github.io/2019/07/07/%E6%9C%80%E8%BF%91%E6%8B%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/</link>
+      <pubDate>Sun, 07 Jul 2019 14:28:49 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/2019/07/07/%E6%9C%80%E8%BF%91%E6%8B%8D%E7%9A%84%E4%B8%80%E4%BA%9B%E7%85%A7%E7%89%87/</guid>
+      <description> 葡萄 多肉 盆栽 茶具 </description>
+    </item>
     
     <item>
       <title>Intellij 中xml的构建问题</title>
