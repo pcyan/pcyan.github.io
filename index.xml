@@ -6,10 +6,24 @@
     <description>Recent content on err0r&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
-    <lastBuildDate>Sun, 07 Jul 2019 14:45:26 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 03 May 2020 21:51:00 +0800</lastBuildDate>
     
 	<atom:link href="https://pcyan.github.io/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>从最新版本gogs迁移到gitea</title>
+      <link>https://pcyan.github.io/2020/05/03/%E4%BB%8E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACgogs%E8%BF%81%E7%A7%BB%E5%88%B0gitea/</link>
+      <pubDate>Sun, 03 May 2020 21:51:00 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/2020/05/03/%E4%BB%8E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACgogs%E8%BF%81%E7%A7%BB%E5%88%B0gitea/</guid>
+      <description>前言 之前团队用了gogs做私有代码仓库，后来发现gogs是单人开发的。有社区版本gitea. gogs本身版本更新太慢了，分支权限控制也有问题。 截止最新的0.11.88版本，开发分支读写权限，居然可以自己pull request后合并到主分支。而且这个问题已经出现很久了。 实在受不了了，就决定迁移到社区版本gitea。
+概要  docker方式部署的迁移 目前最新gogs:0.11.88 数据库，可以成功迁移到 gitea:1.0.2,成功迁移数据库之后，将gogs对应代码仓库，直接移动到对应gitea代码仓库的位置，即可成功迁移到gitea gitea对于docker部署方式的升级，会自动将旧版本数据库，更新迁移为适应新版本的数据库。成功迁移到1.0.2版本之后，再做逐步升级，升级数据库版本即可完成迁移升级。  软件版本  Gogs version: 0.11.88.x  Docker image: gogs/gogs:latest(20200503版本的镜像)  Gitea version (or commit ref): 1.12.0+dev-249-gc97494a4f  Docker image: gitea/gitea:latest(1.12.0+dev-249-gc97494a4f)  Database: SQLite3   公司开发环境用的是ubuntu 下的docker-compose，我个人使用的是mac的rancher管理k8s集群，都是docker。docker部署只做镜像版本的标识，对应系统data目录可以自行挂载
+ 迁移 提示！！！ 迁移之前，请做好数据的备份。
+gitea空壳仓库 初始化一个空壳的gitea仓库，用作迁移使用,gitea/gitea:1.0.2，初始化后选择对应gogs的数据库版本，其他正常配置，不需要配置管理员账号，因为要将gogs用户表迁移过来， 所以gitea仓库不需要有任何数据。
+迁移数据库 将gogs 的gogs.db 复制到gitea 数据库目录下，进入容器shell，使用gitea镜像自带的sqlite3工具，将gogs.db 导出为sql，整理后导入到gitea.db，即可完成迁移
+# 导出数据库 sqlite3 gogs.db -batch &amp;quot;*.dump&amp;quot; &amp;gt; gogs.sql # 不需要创建表 grep -v &#39;^CREATE&#39; gogs.sql &amp;gt; gogs-no-create.</description>
+    </item>
     
     <item>
       <title>最近的想法</title>
@@ -17,11 +31,7 @@
       <pubDate>Sun, 07 Jul 2019 14:45:26 +0800</pubDate>
       
       <guid>https://pcyan.github.io/2019/07/07/%E6%9C%80%E8%BF%91%E7%9A%84%E6%83%B3%E6%B3%95/</guid>
-      <description> 走出失恋的阴影,释放工作压力,努力,让自己成为更好的人
-最近做的,以及将要做的一些事情,用博客记录一下,包括
-工作  搭建drone,并使用drone 做 CD service 滚动更新 service 更新失败自动回滚 日志集成到ELK,规范化管理日志 集成valut,管理线上,测试等环境的各个密钥  个人 重点: 提高身体素质
- 一三五俯卧撑100个 二四六跑步,从2公里开始,慢慢让自己可以跑5公里 提高睡眠质量,22点准备入睡,早上6点30准备起床 把书看完,看完书看点面试题,看看自己缺什么,什么做的不好   调整好心情,给自己安排事情做,避免胡思乱想,陷入抑郁
- </description>
+      <description>&lt;p&gt;走出失恋的阴影,释放工作压力,努力,让自己成为更好的人&lt;/p&gt;</description>
     </item>
     
     <item>
@@ -37,7 +47,7 @@
     </item>
     
     <item>
-      <title>About</title>
+      <title>关于我</title>
       <link>https://pcyan.github.io/about/</link>
       <pubDate>Sun, 30 Jun 2019 11:26:11 +0800</pubDate>
       

@@ -6,9 +6,46 @@
     <description>Recent content in Tags on err0r&#39;s blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-ch</language>
+    <lastBuildDate>Sun, 07 Jul 2019 14:45:26 +0800</lastBuildDate>
     
 	<atom:link href="https://pcyan.github.io/tags/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>think</title>
+      <link>https://pcyan.github.io/tags/think/</link>
+      <pubDate>Sun, 07 Jul 2019 14:45:26 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/tags/think/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>pic</title>
+      <link>https://pcyan.github.io/tags/pic/</link>
+      <pubDate>Sun, 07 Jul 2019 14:28:49 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/tags/pic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>java</title>
+      <link>https://pcyan.github.io/tags/java/</link>
+      <pubDate>Sun, 30 Jun 2019 11:22:32 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>maven</title>
+      <link>https://pcyan.github.io/tags/maven/</link>
+      <pubDate>Sun, 30 Jun 2019 11:22:32 +0800</pubDate>
+      
+      <guid>https://pcyan.github.io/tags/maven/</guid>
+      <description></description>
+    </item>
     
   </channel>
 </rss>

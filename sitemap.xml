@@ -4,12 +4,29 @@
   
   <url>
     <loc>https://pcyan.github.io/post/</loc>
-    <lastmod>2019-07-07T14:45:26+08:00</lastmod>
+    <lastmod>2020-05-03T21:51:00+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
     <loc>https://pcyan.github.io/</loc>
+    <lastmod>2020-05-03T21:51:00+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pcyan.github.io/2020/05/03/%E4%BB%8E%E6%9C%80%E6%96%B0%E7%89%88%E6%9C%ACgogs%E8%BF%81%E7%A7%BB%E5%88%B0gitea/</loc>
+    <lastmod>2020-05-03T21:51:00+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pcyan.github.io/tags/</loc>
+    <lastmod>2019-07-07T14:45:26+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pcyan.github.io/tags/think/</loc>
     <lastmod>2019-07-07T14:45:26+08:00</lastmod>
     <priority>0</priority>
   </url>
@@ -17,6 +34,12 @@
   <url>
     <loc>https://pcyan.github.io/2019/07/07/%E6%9C%80%E8%BF%91%E7%9A%84%E6%83%B3%E6%B3%95/</loc>
     <lastmod>2019-07-07T14:45:26+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://pcyan.github.io/tags/pic/</loc>
+    <lastmod>2019-07-07T14:28:49+08:00</lastmod>
+    <priority>0</priority>
   </url>
   
   <url>
@@ -35,12 +58,19 @@
   </url>
   
   <url>
-    <loc>https://pcyan.github.io/categories/</loc>
+    <loc>https://pcyan.github.io/tags/java/</loc>
+    <lastmod>2019-06-30T11:22:32+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://pcyan.github.io/tags/</loc>
+    <loc>https://pcyan.github.io/tags/maven/</loc>
+    <lastmod>2019-06-30T11:22:32+08:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>https://pcyan.github.io/categories/</loc>
     <priority>0</priority>
   </url>
   
